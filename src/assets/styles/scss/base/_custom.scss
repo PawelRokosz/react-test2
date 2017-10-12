@@ -1,0 +1,87 @@
+#terminplaner {
+	position: relative;
+	top: 92px; left: 340px;
+	width: 781px; height: 786px;
+	background: white;
+	font-family: 'unit-light';
+	box-shadow: 0 1px 1px 0 rgba(black, 0.4);
+	overflow: hidden;
+	.header {
+		position: relative;
+		border-bottom: 1px solid #ebebeb;
+		.control {
+			text-align: center;
+			margin-bottom: 6px;
+			font-size: 1.1em;
+			.prev, .next {
+				padding: 5px;
+				cursor: pointer;
+			}
+		}
+		.month {
+			position: absolute;
+			bottom: 5px; right: 6px;
+			width: 28px; height: 22px;
+			background: url('../../images/month.png') 0 0 no-repeat;
+			cursor: pointer;
+		}
+		.slider {
+			position: absolute;
+			top: -3px; right: 6px;
+			width: 7px; height: 7px;
+			background: url('../../images/slider.png') 0 0 no-repeat;
+			cursor: pointer;
+		}
+	}
+	.table {
+		width: 781px; height: 714px;
+		overflow: scroll;
+		position: relative;
+	}
+	table {
+		thead {
+			tr {
+				height: 33px;
+			}
+			td {
+				text-align: center;
+				line-height: 33px;
+				border-top: 0;
+				&.active { background: #f2f2f2 }
+				&.over
+				&.free {
+					color: rgba(black, 0.5);
+				}
+			}
+		}
+		tbody {
+			tr {
+				height: 132px;
+				&:nth-child(even) td.active { background: #f2f2f2 }
+				&:nth-child(odd) td.active { background: #edecec }
+			}
+			td {
+				vertical-align: top;
+			}
+			.hour {
+    			padding-top: 8px;
+				vertical-align: top;
+				text-align: center;
+			}
+		}
+		td {
+			border: 1px solid #ebebeb;
+			min-width: 107px;
+			&:first-of-type {
+				border-left: 0;
+			}
+		}
+		.hour {
+			font-size: 0.9em;
+		}
+	}
+}
+
+.over {
+	background: rgba(#fdd466, 0.5) !important;
+}
